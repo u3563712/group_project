@@ -1,12 +1,12 @@
 # group_project
 mine sweeper game for the group project.
  Mine Sweeper
-Group No.: 115
-Group members: Gou Longxiang 3035637125
-Zhao Chang 3035772717
+-Group No.: 115
+-Group members: Gou Longxiang 3035637125
+-Zhao Chang 3035772717
 
-Topic: Mine Sweeper
-Link: https://github.com/u3563712/group_project
+-Topic: Mine Sweeper
+-Link: https://github.com/u3563712/group_project
 
 
 
