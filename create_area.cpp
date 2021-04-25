@@ -9,15 +9,14 @@ int **create_area(int a, int mines, int size){    //create an area according to 
 	for(int iii = 0; iii < a; iii++){
 	area[iii] = new int [a];
 	}
-	srand (time(NULL));
-	 
+	srand (time(NULL));			//randomly choose the position the mines
 	int * array2;
-	array2 = new int [mines];                       //randomly choose the position the mines
+	array2 = new int [mines];                     
 	int ii, t, flag, k;
 	for (k=0; k<mines; ){
 		t = (rand() % size);
 		flag = 0;
-		for(ii = 0; ii < k; ii++){
+		for(ii = 0; ii < k; ii++){	//to make sure there are no repeated numbers 
 			if (array2[ii] == t)
 			flag = 1;
 		}
@@ -27,17 +26,17 @@ int **create_area(int a, int mines, int size){    //create an area according to 
 		}
 	}
 	
-	for(int reset1 = 0; reset1 < a; reset1++){
+	for(int reset1 = 0; reset1 < a; reset1++){		//firstly, change every block in the area to be 0
 		for(int reset2 = 0; reset2 < a; reset2++)
 		area[reset1][reset2] = 0;
 	}
 	
-	for (int m=0; m<mines; m++){				//display the mines in the area
+	for (int m=0; m<mines; m++){				//display the mines in the area as 1
 		int x = array2[m] / a;
 		int y = array2[m] % a;
 		area[x][y]=1;
 	}
-	delete array2;
+	delete array2;						//free the useless arrays
 	array2 = NULL;
 	return area;
 }
@@ -49,7 +48,7 @@ int** record_clicking(int a, int ** area){      //create a two-dimensional array
 	for(int iii = 0; iii < a; iii++){
 	record[iii] = new int [a];
 	}
-	for (i=0; i<a; i++){
+	for (i=0; i<a; i++){			//initially, the clicking record is supposed to be the same as the area recording the position of mines(We assume that the blocks with mines have been clicked.) 
 		for (j=0; j<a; j++){
 			record[i][j] = area[i][j];
 		}
@@ -61,7 +60,7 @@ int** count_mines(int** area, int a){         //create an array with each block 
 					      //given the parametre of the area and the former area created by create_area()
 	int ** array3;
 	array3 = new int* [a+2];
-	for (int i=0; i<a+2; i++){
+	for (int i=0; i<a+2; i++){		//create an area that is two lines and two columns larger than the original area, which surround the original area with 0 to make the counting process convenient 
 		int *line = new int [a+2];
 		for (int j=0; j<a+2; j++){
 			if ((i==0)||(i==a+1))
@@ -79,17 +78,8 @@ int** count_mines(int** area, int a){         //create an array with each block 
 		}
 	}	
 	
-/*	int hardtofind1, hardtofind2;
-	for(hardtofind1 = 0; hardtofind1 < a+2; hardtofind1++){
-		for (hardtofind2 = 0; hardtofind2 < a+2; hardtofind2++){
-			cout << array3[hardtofind1][hardtofind2] << " " ;
-		}
-		cout << endl;
-	}*/          //for debugging
 	
-	
-	
-	int **count = new int* [a];
+	int **count = new int* [a];		//count the number of mines in the surrounding 8 blocks
 	for(int m = 0; m < a; m++){
 		int *line1 = new int [a];
 		for (int n=0; n < a; n++){
