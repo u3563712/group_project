@@ -49,5 +49,7 @@ clean:
 	rm -f main.o create_area.o check_connection.o choose.o
 .PHONY:clean
 
+2. open the shell and input: make main
+
 
 
