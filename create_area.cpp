@@ -3,8 +3,8 @@
 #include <cstdlib>
 using namespace std;
 
-int **create_area(int a, int mines, int size){    //all functions return the pointers
-                                                  //given the parametre of the map, the number of mines and the size of the map, generate the map and return the pointer. The block with mine will be denoted 1 and 0 otherwise.
+int **create_area(int a, int mines, int size){    //create an area according to the input size of the user
+                                                  //given the parametre of the area, the number of mines and the size of the area, generate the map and return the pointer. The block with mine will be denoted 1 and 0 otherwise.
 	int **area = new int* [a];
 	for(int iii = 0; iii < a; iii++){
 	area[iii] = new int [a];
@@ -12,7 +12,7 @@ int **create_area(int a, int mines, int size){    //all functions return the poi
 	srand (time(NULL));
 	 
 	int * array2;
-	array2 = new int [mines];                       //focus on the dynamic array here
+	array2 = new int [mines];                       //randomly choose the position the mines
 	int ii, t, flag, k;
 	for (k=0; k<mines; ){
 		t = (rand() % size);
@@ -32,7 +32,7 @@ int **create_area(int a, int mines, int size){    //all functions return the poi
 		area[reset1][reset2] = 0;
 	}
 	
-	for (int m=0; m<mines; m++){
+	for (int m=0; m<mines; m++){				//display the mines in the area
 		int x = array2[m] / a;
 		int y = array2[m] % a;
 		area[x][y]=1;
@@ -42,7 +42,8 @@ int **create_area(int a, int mines, int size){    //all functions return the poi
 	return area;
 }
 
-int** record_clicking(int a, int ** area){      //I think we can do more in this function. Dunno how to write a discription of it. 
+int** record_clicking(int a, int ** area){      //create a two-dimensional array to record the blocks being clicked 
+						//given the parametre and the former area created in create_area()
 	int i, j;
 	int **record = new int* [a];
 	for(int iii = 0; iii < a; iii++){
@@ -56,7 +57,8 @@ int** record_clicking(int a, int ** area){      //I think we can do more in this
 	return record;
 } 
 
-int** count_mines(int** area, int a){         //return another map with the same size with area. Each block denoted by the number of mines around it. (For blocks with mines, the result will be num. -1) 
+int** count_mines(int** area, int a){         //create an array with each block denoted by the number of mines around it.  
+					      //given the parametre of the area and the former area created by create_area()
 	int ** array3;
 	array3 = new int* [a+2];
 	for (int i=0; i<a+2; i++){
@@ -104,7 +106,7 @@ int** count_mines(int** area, int a){         //return another map with the same
 		}
 		count[m]=line1;
 	}
-	for(int Delete = 0; Delete < a+2 ; Delete ++)
+	for(int Delete = 0; Delete < a+2 ; Delete ++)			//free the unnecessary arrays
 	{delete array3[Delete];
 	array3[Delete] = NULL;}
 	
@@ -114,7 +116,7 @@ int** count_mines(int** area, int a){         //return another map with the same
 	return count;
 }
 
-int input(int ** &area, int ** &record, int ** &count){							//??
+int input(int ** &area, int ** &record, int ** &count){							//let the user input the parametre of area and call the functions above
 	int a;
 	cout << "Please input the size of the area: ";
 	cin >> a;
@@ -126,11 +128,5 @@ int input(int ** &area, int ** &record, int ** &count){							//??
 	return a;
 }
 
-
-/*int **area = new *int [a];
-for(int iii = 0; iii < a; iii++){
-	int *line = new int [a];
-	area[iii] = line;
-} */											// prototype
 
 
