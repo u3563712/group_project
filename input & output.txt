@@ -1,0 +1,115 @@
+output: Please input the size of the area:
+
+input: 5
+
+output:      1  2  3  4  5
+
+             1   X  X  X  X  X
+             2   X  X  X  X  X
+             3   X  X  X  X  X
+             4   X  X  X  X  X 
+             5   X  X  X  X  X 
+Please enter the block you click (in the format of row first and colomn second. e.g. 3 4)   
+
+input: 3 3
+
+output:      1  2  3  4  5
+
+             1   X  X  X  X  X
+             2   X  X  X  X  X
+             3   X  X  2  X  X
+             4   X  X  X  X  X 
+             5   X  X  X  X  X  
+Please enter the block you click (in the format of row first and colomn second. e.g. 3 4) 
+
+input: 3 1
+
+output:      1  2  3  4  5
+
+             1   0  1  X  X  X
+             2   0  1  X  X  X
+             3   0  1  2  X  X
+             4   0  0  1  X  X 
+             5   0  0  1  X  X 
+Please enter the block you click (in the format of row first and colomn second. e.g. 3 4)  
+、
+input: 1 3
+
+output:      1  2  3  4  5
+
+             1   0  1  1  X  X
+             2   0  1  X  X  X
+             3   0  1  2  X  X
+             4   0  0  1  X  X 
+             5   0  0  1  X  X 
+Please enter the block you click (in the format of row first and colomn second. e.g. 3 4) 
+
+input: 1 4
+
+output:      1  2  3  4  5
+
+             1   0  1  1  1  X
+             2   0  1  X  X  X
+             3   0  1  2  X  X
+             4   0  0  1  X  X 
+             5   0  0  1  X  X  
+Please enter the block you click (in the format of row first and colomn second. e.g. 3 4)
+
+2 4
+ 
+output:      1  2  3  4  5
+
+             1   0  1  1  1  X
+             2   0  1  X  1  X
+             3   0  1  2  X  X
+             4   0  0  1  X  X 
+             5   0  0  1  X  X  
+Please enter the block you click (in the format of row first and colomn second. e.g. 3 4)
+
+input: 1 5
+
+output:      1  2  3  4  5
+
+             1   0  1  1  1  0
+             2   0  1  X  1  0
+             3   0  1  2  X  1
+             4   0  0  1  X  X 
+             5   0  0  1  X  X  
+Please enter the block you click (in the format of row first and colomn second. e.g. 3 4)
+  
+input: 3 4
+
+output:      1  2  3  4  5
+
+             1   0  1  1  1  0
+             2   0  1  X  1  0
+             3   0  1  2  2  1
+             4   0  0  1  X  X 
+             5   0  0  1  X  X  
+Please enter the block you click (in the format of row first and colomn second. e.g. 3 4)
+
+input: 5 4
+
+output:      1  2  3  4  5
+
+             1   0  1  1  1  0
+             2   0  1  X  1  0
+             3   0  1  2  2  1
+             4   0  0  1  X  X 
+             5   0  0  1  1  X  
+Please enter the block you click (in the format of row first and colomn second. e.g. 3 4)
+
+input: 4 5
+
+output:      1  2  3  4  5
+
+             1   0  1  1  1  0
+             2   0  1  X  1  0
+             3   0  1  2  2  1
+             4   0  0  1  X  1 
+             5   0  0  1  1  X  
+Please enter the block you click (in the format of row first and colomn second. e.g. 3 4)
+
+input: 5 5
+
+output: You win.
