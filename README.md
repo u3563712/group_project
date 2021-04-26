@@ -31,6 +31,9 @@ Then the inputs following indicates the grid player chooses to check. If the gri
 4.	Program codes in multiple files
 The mine sweeper program will be separated into several function section with multiple files.
 
+Testing environment:
+We have tested on academy server academy11 and the program works fine.
+
 How to compile?
 1. input the text in the Makefile document to complie the program
 
